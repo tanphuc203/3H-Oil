@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3H oil - Dầu ăn từ thực vật</title>
+
+    <meta
+      name="description"
+      content="Đây là trang dành cho việc mua các sản phẩm của 3H-Oil. Thông qua trang này, khách hàng không chỉ tham khảo được toàn bộ thông tin của bộ sưu tập mà còn có thể mua ngay tại đây."
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/modal_product.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/cart.css" />
+  </head>
+  <body>
+    <section id="header" class="container header row">
+      <input
+        type="checkbox"
+        hidden
+        class="header_mobile_input"
+        id="header_mobile"
+      />
+      <label for="header_mobile" class="menu_mobile"
+        ><i class="bx bx-menu"></i
+      ></label>
+      <label for="header_mobile" class="nav_overlay"></label>
+      <div class="logo">
+        <!-- <a href="./index.html">
+          <img src="./assets/logo.svg" alt="" />
+        </a> -->
+      </div>
+      <div id="menu" class="menu">
+        <a class="btn active" href="index.html">Trang chủ</a>
+        <a class="btn" href="index.html#truyen">Câu chuyện</a>
+        <a class="btn" href="index.html#sanpham">Sản phẩm</a>
+        <a class="btn" href="index.html#manage_material"
+          >Chất liệu & Bảo quản</a
+        >
+        <a class="btn" href="index.html#policy">Chính sách đổi trả</a>
+        <a class="btn" href="index.html#about">Về chúng tôi</a>
+      </div>
+      <div class="icon">
+        <a id="myBtn_login" href="#!"><i class="bx bx-user"></i></a>
+        <a href="./cart.html" class="icon_cart"
+          ><i class="bx bx-cart"></i> <span>2</span></a
+        >
+        <a href="#" class="openBtn" onclick="openSearch()"
+          ><i class="bx bx-search"></i
+        ></a>
+      </div>
+      <!-- modal login -->
+      <div id="myModal_login" class="modal_login">
+        <!-- Nội dung form đăng nhập -->
+        <div class="modal-content_login">
+          <form class="modal-content_body" action="#">
+            <span class="close_login">&times;</span>
+            <h2>Shop <span>3H-Oil</span></h2>
+            <div class="fomrgroup_login">
+              <label for="tk">Tài khoản:</label>
+              <input
+                type="text"
+                name="username"
+                id="tk"
+                placeholder="Nhập tài khoản "
+              />
+            </div>
+            <div class="fomrgroup_login">
+              <label for="mk">Mật khẩu:</label>
+              <input
+                type="passWord"
+                id="mk"
+                name="passWord"
+                placeholder="Nhập mật khẩu"
+              />
+            </div>
+            <div class="fomrgroup_login">
+              <button>Đăng nhập</button>
+              <p style="margin: 1rem 0 0 0; color: darkgrey">
+                Bạn chưa có tài khoản?
+                <span>Đăng ký ngay</span>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- modal search -->
+      <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+          >×</span
+        >
+        <div class="overlay-content">
+          <form action="/action_page.php">
+            <input
+              type="text"
+              placeholder="Tìm kiếm sản phẩm..."
+              name="search"
+            />
+            <button type="submit">Tìm kiếm</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart_body container">
+      <h1 style="text-transform: uppercase">Giỏ hàng</h1>
+      <div style="overflow-x: auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="img_text">
+                  <img src="./product/2.jpg" alt="" />
+                  <p>Tên sản phẩm</p>
+                </div>
+              </td>
+              <td>299.000 VND</td>
+              <td>1</td>
+              <td><i class="bx bx-trash"></i></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="img_text">
+                  <img src="./product/3.jpg" alt="" />
+                  <p>Tên sản phẩm</p>
+                </div>
+              </td>
+              <td>329.000 VND</td>
+              <td>1</td>
+              <td><i class="bx bx-trash"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="total container">
+      <div class="total_item">
+        <h3>Thông tin khách hàng</h3>
+        <div class="total_item_input">
+          <div class="total_item_input-flex">
+            <div class="total_item_input-flex-inblock">
+              <label for="Name">Họ và tên <span>*</span></label>
+              <input
+                type="text"
+                class="total_item_input-text"
+                id="Name"
+                placeholder="Nhập họ và tên"
+              />
+            </div>
+            <div class="total_item_input-flex-inblock">
+              <label for="phone">Số điện thoại <span>*</span></label>
+              <input
+                type="text"
+                class="total_item_input-text"
+                id="phone"
+                placeholder="Nhập số điện thoại"
+              />
+            </div>
+          </div>
+          <label for="address">Địa chỉ <span>*</span></label>
+          <input
+            type="text"
+            class="total_item_input-text"
+            id="address"
+            placeholder="Địa chỉ giao hàng"
+          />
+        </div>
+      </div>
+      <div class="total_item">
+        <h3>Thông tin thanh toán</h3>
+        <div class="total_item_input">
+          <p>Tổng giá tiền <span>628.000 VND</span></p>
+          <p>Phí vận chuyển <span>20.000 VND</span></p>
+          <p>Thuế <span>Free</span></p>
+        </div>
+        <h4>Tổng Tiền <span>648.000 VND</span></h4>
+
+        <button>Thanh toán</button>
+      </div>
+    </section>
+
+    <img
+      class="icon_body"
+      style="bottom: 15%"
+      src="./assets/icon/phone-1439840_960_720.webp"
+      alt=""
+    />
+    <img
+      class="messenger"
+      src="./assets/icon/Facebook-Messenger-200.png"
+      alt=""
+    />
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/javascrip.js"></script>
+  </body>
+</html>

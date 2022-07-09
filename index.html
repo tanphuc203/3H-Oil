@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="16x16" />
+    <title>3H oil - Dầu ăn từ thực vật</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="description" content="Đây là...tui chưa nghĩ ra" />
+
+    <link rel="stylesheet" href="./assets/css/normalize.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/modal_product.css" />
+  </head>
+  <body>
+    <section id="header" class="header row">
+      <input
+        type="checkbox"
+        hidden
+        class="header_mobile_input"
+        id="header_mobile"
+      />
+      <label for="header_mobile" class="menu_mobile"
+        ><i class="bx bx-menu"></i
+      ></label>
+      <label for="header_mobile" class="nav_overlay"></label>
+      <div class="logo">
+        <!-- <a href="./index.html">
+          <img src="./assets/logo.svg" alt="" />
+        </a> -->
+      </div>
+      <div id="menu" class="menu">
+        <a class="btn active" href="#">Trang chủ</a>
+        <a class="btn" href="#truyen">Giới thiệu</a>
+        <a class="btn" href="#sanpham">Sản phẩm</a>
+        <a class="btn" href="#manage_material">Chất liệu & Bảo quản</a>
+        <a class="btn" href="#policy">Chính sách đổi trả</a>
+        <a class="btn" href="#about">Về chúng tôi</a>
+      </div>
+      <div class="icon">
+        <a id="myBtn_login" href="#!"><i class="bx bx-user"></i></a>
+        <a href="./cart.html" class="icon_cart"
+          ><i class="bx bx-cart"></i> <span>2</span></a
+        >
+        <a href="#" class="openBtn" onclick="openSearch()"
+          ><i class="bx bx-search"></i
+        ></a>
+      </div>
+      <!-- modal login -->
+      <div id="myModal_login" class="modal_login">
+        <!-- Nội dung form đăng nhập -->
+        <div class="modal-content_login">
+          <form class="modal-content_body" action="#">
+            <span class="close_login">&times;</span>
+            <h2>Shop <span>3H-Oil</span></h2>
+            <div class="fomrgroup_login">
+              <label for="tk">Tài khoản:</label>
+              <input
+                type="text"
+                name="username"
+                id="tk"
+                placeholder="Nhập tài khoản "
+              />
+            </div>
+            <div class="fomrgroup_login">
+              <label for="mk">Mật khẩu:</label>
+              <input
+                type="passWord"
+                id="mk"
+                name="passWord"
+                placeholder="Nhập mật khẩu"
+              />
+            </div>
+            <div class="fomrgroup_login">
+              <button>Đăng nhập</button>
+              <p style="margin: 1rem 0 0 0; color: darkgrey">
+                Bạn chưa có tài khoản?
+                <span>Đăng ký ngay</span>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- modal search -->
+      <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay"
+          >×</span
+        >
+        <div class="overlay-content">
+          <form action="/action_page.php">
+            <input
+              type="text"
+              placeholder="Tìm kiếm sản phẩm..."
+              name="search"
+            />
+            <button type="submit">Tìm kiếm</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <!-- <div class="banner_block">
+        <img src="./product/aothun1.jpg" alt="" />
+        <p class="banner_block_p">TSum01 Hawaii</p>
+        <a href="#sanpham">Mua ngay</a>
+      </div>
+      <div class="banner_block">
+        <p class="banner_block_right">“Gọi hè cùng Uniqlo”</p>
+        <p class="banner_block_right">Hè rực rỡ, hứng niềm vui</p>
+      </div> -->
+    </section>
+
+    <section id="truyen" class="story container">
+      <div class="story_body">
+        <h3>Giới thiệu</h3>
+        <p>
+          Giới thiệu ở đây nèeeee
+          <span>“Dầu ăn quả bơ”</span>.
+          <br />
+          Rồi nói lí do nên dùng dầu ăn làm từ bơ ở đây
+          <br />
+          Vì thế, hãy cùng 3H oil....!
+        </p>
+      </div>
+      <div class="story_body">
+        <img src="./assets/b1d035bdfa1d34436d0c.jpg" alt="" />
+      </div>
+    </section>
+
+    <section id="sanpham" class="product">
+      <div class="product_h3">
+        <h3>Sản phẩm</h3>
+      </div>
+      <div class="container product_content">
+        <div id="myBtn" class="product_content_item">
+          <!-- <div class="sale">
+            <p>20%</p>
+          </div> -->
+
+          <div class="product_content_item_top myBtn">
+            <img src="./product/1.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>
+                  <span>299.000 VND</span>
+                  240.000 VND
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/1.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                    <li style="background-color: brown">Nữ</li>
+                    <li style="background-color: chocolate">Trẻ em</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">299.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+        <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/2.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>299.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/2.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                    <li style="background-color: brown">Nữ</li>
+                    <li style="background-color: chocolate">Trẻ em</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">299.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+        <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/3.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>329.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/3.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                    <li style="background-color: brown">Nữ</li>
+                    <li style="background-color: chocolate">Trẻ em</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">329.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/4.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>329.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img
+                    src="./product/4.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                    <li style="background-color: brown">Nữ</li>
+                    <li style="background-color: chocolate">Trẻ em</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">329.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+        <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/5.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>399.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/5.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">399.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+        <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/6.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>249.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/6.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: brown">Nữ</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">249.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/7.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>Tên sản phẩm</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>329.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>Tên sản phẩm</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/7.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <!-- <ul class="sex">
+                    <li style="background-color: brown">Nữ</li>
+                  </ul> -->
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li style="background-color: rgb(188, 188, 76)">S</li>
+                      <li style="background-color: brown">M</li>
+                      <li style="background-color: chocolate">L</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">329.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div>
+        <!-- <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/DSum02 Hawaii.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>DSum02 Hawaii</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>329.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>DSum02 Hawaii</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/DSum02 Hawaii.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <ul class="sex">
+                    <li style="background-color: brown">Nữ</li>
+                  </ul>
+                  <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li>S</li>
+                      <li>M</li>
+                      <li>L</li>
+                      <li>XL</li>
+                    </ul>
+                  </div>
+                  <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">329.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/HSum Hawaii.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>HSum Hawaii</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>149.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>HSum Hawaii</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/HSum Hawaii.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <ul class="sex">
+                    <li style="background-color: brown">Nữ</li>
+                  </ul> -->
+                  <!-- <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li>S</li>
+                      <li>M</li>
+                      <li>L</li>
+                      <li>XL</li>
+                    </ul>
+                  </div> -->
+                  <!-- <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">149.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/ASum Hawaii.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>ASum Hawaii</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>149.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>ASum Hawaii</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/ASum Hawaii.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                    <li style="background-color: brown">Nữ</li>
+                  </ul> -->
+                  <!-- <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li>S</li>
+                      <li>M</li>
+                      <li>L</li>
+                      <li>XL</li>
+                    </ul>
+                  </div> -->
+                  <!-- <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">149.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div id="myBtn" class="product_content_item">
+          <div class="product_content_item_top myBtn">
+            <img src="./product/JSum Hawaii.jpg" alt="" />
+            <div class="product_content_item_top_text">
+              <h4>JSum Hawaii</h4>
+              <div class="bottom">
+                <div class="start">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <p>129.000 VND</p>
+              </div>
+            </div>
+          </div>
+          <div class="product_content_item_bottom">
+            <button onclick="submitForm()">Mua ngay</button>
+            <button onclick="submitCart()"><i class="bx bx-plus"></i></button>
+          </div>
+
+          <div class="modal">
+            <div class="modal-content">
+              <p><i class="arrow left"></i></p>
+              <span class="close close">×</span>
+              <h4>JSum Hawaii</h4>
+              <div class="modal-content_body">
+                <div class="modal-content_body_item">
+                  <img src="./product/JSum Hawaii.jpg" alt="" />
+                </div>
+                <div class="modal-content_body_item">
+                  <ul class="sex">
+                    <li style="background-color: rgb(188, 188, 76)">Nam</li>
+                    <li style="background-color: brown">Nữ</li>
+                    <li style="background-color: chocolate">Trẻ em</li>
+                  </ul> -->
+                  <!-- <div class="size">
+                    <span>Size:</span>
+                    <ul>
+                      <li>S</li>
+                      <li>M</li>
+                      <li>L</li>
+                      <li>XL</li>
+                    </ul>
+                  </div> -->
+                  <!-- <div class="quantity">
+                    <label for="quantity">Số lượng</label>
+                    <input
+                      class="quantity_input"
+                      type="number"
+                      name=""
+                      value="1"
+                      id="quantity"
+                    />
+                  </div>
+                  <div class="price">129.000 VND</div>
+                </div>
+              </div>
+              <p><i class="arrow right"></i></p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <section id="manage_material" class="manage_material container">
+      <div class="manage_material_item">
+        <h4>Chất liệu</h4>
+        <p>
+          Chất liệu
+        </p>
+      </div>
+      <div class="manage_material_item">
+        <h4>Bảo quản</h4>
+        <ul>
+          <li>
+            
+          </li>
+          <li>
+            
+          </li>
+          <li>
+           
+          </li>
+          <li>
+            
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="policy" class="policy container">
+      <div class="policy_body">
+        <h4>Chính sách đổi trả</h4>
+        <ul class="policy_body_ul">
+          <li>
+            Đổi trong vòng 15 ngày kể từ ngày mua được in trên biên lai mua hàng.
+          </li>
+          <li>
+            Có đủ bản gốc biên lai mua hàng, và sản phẩm chưa qua sử dụng với
+            đầy đủ nhãn giá, nhãn sản phẩm và nhãn khác (nếu có).
+          </li>
+          <li>Không phải là sản phẩm lỗi được bán với giá giảm đặc biệt.</li>
+          <li>Đã được mua tại các cửa hàng 3H-oil Việt Nam.</li>
+          <li>
+            Những sản phẩm đóng gói còn nguyên tem niêm phong.
+          </li>
+          <li>
+            Sản phẩm còn có giá trị bán ra thị trường (không bị mở hộp, còn
+            mới, không bị rách).
+          </li>
+          <li>
+            Chỉ chấp nhận việc đổi sản phẩm lấy sản phẩm khác có cùng giá hoặc
+            cao hơn giá mua ban đầu (Nếu giá cao hơn thì khách hàng phải trả
+            thêm phần chênh lệch).
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lienhe">
+      <div class="container input_email">
+        <div class="flex">
+          <i class="bx bx-envelope"></i>
+          <p>Đăng kí nhận tin</p>
+        </div>
+        <div class="flex">
+          <input type="text" placeholder="Nhập email của bạn" />
+          <button>Đăng ký</button>
+        </div>
+        <div class="flex">
+          <i class="bx bxs-phone"></i>
+          <p>Hỗ trợ / Mua hàng: <span>093.278.9582</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h3>Về chúng tôi</h3>
+      <!-- <p>Tên công ty: UNIQLO VIETNAM CO., LTD</p>
+      <br />
+      <p>
+        Giấy chứng nhận đăng ký doanh nghiệp số: 0315304731, đăng ký lần đầu
+        ngày 02/10/2018, đăng ký thay đổi lần thứ ba ngày 23/09/2019
+      </p>
+      <br />
+      <p>
+        Địa chỉ trụ sở doanh nghiệp: Tầng 26, Tòa nhà Trụ Sở Điều Hành Và Trung
+        Tâm Thương Mại Viettel, 285 Cách Mạng Tháng Tám, Phường 12, Quận 10,
+        Thành phố Hồ Chí Minh
+      </p>
+      <br />
+      <p>Để được giải đáp thắc mắc, vui lòng truy cập trang FAQ/Trợ giúp</p>
+      <br />
+      <p>Giờ làm việc: 9:00 - 18:00 (Thứ Hai - Chủ Nhật)</p> -->
+      <p>
+        Công ty cổ phần dầu thực vật 3H Oil là công ty chuyên kinh doanh và phân
+        phối các sản phẩm chế biến từ dầu thực vật với tiêu chuẩn chất lượng
+        cao. Cùng với sự nỗ lực của ban lãnh đạo và nguồn nhân lực của 3H Oil,
+        ra sức lựa chọn nguyên liệu là trái bơ hoàn toàn thiên nhiên, chắc lọc
+        kỹ càng giúp gìn giữ tinh hoa và nhiều chất dinh dưỡng. Ngoài ra, dầu
+        thực vật 3H Oil còn cung cấp vitamin A,D,E và axit béo không no kèm
+        omega 3, 6 cực tốt cho tim mạch đáp ứng nhu cầu không chỉ ăn ngon mà "Ăn
+        là để khỏe". 3H Oil cam kết mang lại các giá trị có ích cho xã hội.
+      </p>
+    </section>
+
+    <!-- <div class="icon_all"> -->
+    <img
+      class="icon_body"
+      style="bottom: 15%"
+      src="./assets/icon/phone-1439840_960_720.webp"
+      alt=""
+    />
+    <img
+      class="messenger"
+      src="./assets/icon/Facebook-Messenger-200.png"
+      alt=""
+    />
+    <!-- </div> -->
+
+    <script src="./assets/js/javascrip.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+
+    <script>
+      function submitForm() {
+        alert("Mua sản phẩm thành công!");
+      }
+      function submitCart() {
+        alert("Thêm sản phẩm vào giỏ hàng thành công!");
+      }
+    </script>
+  </body>
+</html>
